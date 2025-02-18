@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="icon" type="image/png" href="/assets/kiwi-fruit.png" />
     <link rel="stylesheet" type="text/css" href="login.css" />
     <title>Jessie's Community</title>
   </head>
   <body>
-    로그인
+    <div class="navBar">Jessie's Community</div>
+    <div class="loginWrapper">
+      <h3 class="loginTitleText">로그인</h3>
+      <form class="loginForm">
+        <div class="inputWrapper">
+          <p class="inputTitleText">이메일</p>
+          <input type="text" placeholder="이메일을 입력하세요" />
+          <p class="helperText">*helper text</p>
+        </div>
+        <div class="inputWrapper">
+          <p class="inputTitleText">비밀번호</p>
+          <input type="password" placeholder="비밀번호를 입력하세요" />
+          <p class="helperText">*helper text</p>
+        </div>
+        <button type="submit" class="loginButton">로그인</button>
+      </form>
+      <a href="/signup/signup.html" class="signupButton">회원가입</a>
+    </div>
   </body>
 </html>

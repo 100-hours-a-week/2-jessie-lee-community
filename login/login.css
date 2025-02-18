@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBar {
+  width: 100%;
+  height: 104px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #000000;
+
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.loginWrapper {
+  width: 400px;
+  flex: 1 0 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.loginForm {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.loginTitleText {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38.19px;
+}
+
+.inputWrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.inputWrapper > input {
+  height: 20px;
+  margin-top: 10px;
+  padding: 10px;
+
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.inputTitleText {
+  font-weight: 500;
+  margin: 0;
+}
+
+.helperText {
+  color: red;
+  margin: 3px 0 0;
+}
+
+.loginButton {
+  width: 100%;
+  height: 37px;
+
+  background-color: #aca0eb;
+  /* background-color: #7f6aee; */
+  color: #ffffff;
+
+  border: 0;
+  border-radius: 10px;
+}
+
+.signupButton {
+  color: #000000;
+  text-decoration: none;
+}
