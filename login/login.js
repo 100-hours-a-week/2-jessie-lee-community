@@ -44,7 +44,7 @@ passwordInput.addEventListener("input", function () {
     loginButton.style.backgroundColor = "#aca0eb";
   } else if (!isPasswordValid(password)) {
     passwordHelper.textContent =
-      "*비밀번호는 8자 이상, 20자 이하이며 대문자, 소문사, 숫자, 특수문자를 각각 최소 1개 포함해야 합니다.";
+      "*비밀번호는 8자 이상, 20자 이하이며 대문자, 소문자, 숫자, 특수문자를 각각 최소 1개 포함해야 합니다.";
     loginButton.style.backgroundColor = "#aca0eb";
   } else {
     passwordHelper.textContent = "";
