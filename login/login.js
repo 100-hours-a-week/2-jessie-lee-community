@@ -1,4 +1,4 @@
-import { emailRegex, isPasswordValid } from "./validation";
+import { emailRegex, isPasswordValid } from "./validation.js";
 
 const emailInput = document.getElementById("emailInput");
 const emailHelper = document.getElementById("emailHelper");
@@ -13,8 +13,7 @@ emailInput.addEventListener("input", function () {
     emailHelper.textContent = "";
     loginButton.style.backgroundColor = "#7f6aee";
   } else {
-    emailHelper.textContent =
-      "*올바른 이메일 주소 형식을 입력해주세요. (예: example@example.com)";
+    emailHelper.textContent = "*올바른 이메일 주소 형식을 입력해주세요. (예: example@example.com)";
     loginButton.style.backgroundColor = "#aca0eb";
   }
 });

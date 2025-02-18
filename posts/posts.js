@@ -1,3 +1,5 @@
+import { formatDate } from "../utils/formatDate.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   loadPosts();
 });
@@ -22,8 +24,9 @@ function displayPosts(posts) {
 }
 
 function createPostElement(post) {
-  const postElement = document.createElement("div");
+  const postElement = document.createElement("a");
   postElement.className = "post";
+  postElement.href = `post-detail.html?id=${post.id}`;
 
   postElement.innerHTML = `
         <div class="post-title">${post.title}</div>
@@ -38,17 +41,4 @@ function createPostElement(post) {
     `;
 
   return postElement;
-}
-
-function formatDate(dateString) {
-  const date = new Date(dateString.replace(" ", "T")); // 문자열을 Date 객체로 변환
-
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
-  const seconds = String(date.getSeconds()).padStart(2, "0");
-
-  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }
