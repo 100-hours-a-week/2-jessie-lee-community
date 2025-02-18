@@ -1,11 +1,10 @@
+import { emailRegex, isPasswordValid } from "./validation";
+
 const emailInput = document.getElementById("emailInput");
 const emailHelper = document.getElementById("emailHelper");
 const passwordInput = document.getElementById("passwordInput");
 const passwordHelper = document.getElementById("passwordHelper");
 const loginButton = document.getElementById("loginButton");
-
-// 이메일 유효성 검사를 위한 정규표현식
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 emailInput.addEventListener("input", function () {
   const email = this.value;
@@ -19,22 +18,6 @@ emailInput.addEventListener("input", function () {
     loginButton.style.backgroundColor = "#aca0eb";
   }
 });
-
-function isPasswordValid(password) {
-  // 길이 체크
-  if (password.length < 8 || password.length > 20) {
-    return false;
-  }
-
-  // 각 조건을 체크
-  const hasLowerCase = /[a-z]/.test(password);
-  const hasUpperCase = /[A-Z]/.test(password);
-  const hasNumber = /\d/.test(password);
-  const hasSpecialChar = /[@$!%*?&]/.test(password);
-
-  // 모든 조건이 충족되어야 true 반환
-  return hasLowerCase && hasUpperCase && hasNumber && hasSpecialChar;
-}
 
 passwordInput.addEventListener("input", function () {
   const password = this.value;
