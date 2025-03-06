@@ -1,4 +1,4 @@
-import { formatDate } from "../utils/formatDate.js";
+import { formatDate } from "../../utils/formatDate.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadPosts();
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadPosts() {
   try {
-    const response = await fetch("posts.json");
+    const response = await fetch("../../data/posts.json");
     const data = await response.json();
     displayPosts(data.posts);
   } catch (error) {

@@ -1,4 +1,4 @@
-import { emailRegex, isPasswordValid } from "./validation.js";
+import { emailRegex, isPasswordValid } from "../../utils/loginValidation.js";
 
 const emailInput = document.getElementById("emailInput");
 const emailHelper = document.getElementById("emailHelper");
