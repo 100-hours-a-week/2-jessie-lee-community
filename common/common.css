@@ -18,3 +18,9 @@ input {
   border: 1px solid #000000;
   border-radius: 5px;
 }
+
+.helperText {
+  color: red;
+  font-size: 12px;
+  margin: 3px 0 0;
+}
