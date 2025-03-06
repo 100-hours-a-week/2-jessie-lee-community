@@ -9,3 +9,12 @@ body {
   align-items: center;
   background-color: #f5f5f5;
 }
+
+input {
+  height: 20px;
+  margin-top: 10px;
+  padding: 10px;
+
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
