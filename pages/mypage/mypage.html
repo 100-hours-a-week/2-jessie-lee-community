@@ -3,11 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="icon" type="image/png" href="/assets/kiwi-fruit.png" />
     <link rel="stylesheet" type="text/css" href="mypage.css" />
+    <link rel="stylesheet" type="text/css" href="../../common/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../components/navbar/navbar.css" />
     <title>Jessie's Community</title>
   </head>
   <body>
-    마이페이지
+    <div class="navBar">Jessie's Community</div>
+    <div class="mypageWrapper">
+      <h3 class="mypageTitleText">회원정보수정</h3>
+      <div class="profileEditContainer">
+        <p class="profileEditHelperText">프로필 사진*</p>
+        <img class="profileImage" src="../../assets/sample-profile-image.jpg" />
+      </div>
+      <div class="profileEditContainer">
+        <p class="profileEditHelperText">이메일</p>
+        <p class="profileEmailText">example@gmail.com</p>
+      </div>
+      <div class="profileEditContainer">
+        <p class="profileEditHelperText">닉네임</p>
+        <input type="text" class="profileNicknameInput" placeholder="닉네임을 입력하세요" />
+        <span class="profileNicknameValidText"></span>
+      </div>
+
+      <a class="editButton" href="">수정하기</a>
+      <a class="resignButton" href="">회원 탈퇴</a>
+      <a class="completeButton" href="">수정 완료</a>
+    </div>
   </body>
 </html>
