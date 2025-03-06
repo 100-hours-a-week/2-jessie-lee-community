@@ -26,7 +26,7 @@ function displayPosts(posts) {
 function createPostElement(post) {
   const postElement = document.createElement("a");
   postElement.className = "post";
-  postElement.href = `post-detail.html?id=${post.id}`;
+  postElement.href = `../postdetail/post-detail.html?id=${post.id}`;
 
   postElement.innerHTML = `
         <div class="post-title">${post.title}</div>

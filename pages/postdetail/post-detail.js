@@ -16,7 +16,7 @@ async function loadPostDetail() {
     }
 
     // 게시글 데이터 불러오기
-    const response = await fetch("posts.json");
+    const response = await fetch("../../data/posts.json");
     const data = await response.json();
 
     // ID에 해당하는 게시글 찾기
