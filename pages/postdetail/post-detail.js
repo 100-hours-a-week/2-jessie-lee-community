@@ -39,17 +39,23 @@ function displayPostDetail(post) {
       <article class="post-detail">
           <h1 class="post-detail-title">${post.title}</h1>
           <div class="post-detail-info">
+            <div class="post-detail-info-text">
               <span class="author">${post.author}</span>
               <span class="date">${formatDate(post.date)}</span>
+            </div>
+            <div class="post-detail-actions">
+              <button class="edit btn">수정</button>
+              <button class="delete btn">삭제</button>
+            </div>
           </div>
           <div class="divider"></div>
           <div class="post-detail-content">
               ${post.content}
           </div>
           <div class="post-detail-stats">
-              <button class="post-detail-button">${post.likes}</br>좋아요수</button>
-              <button class="post-detail-button">${post.views}</br>조회수</button>
-              <button class="post-detail-button">${post.comments}</br>댓글</button>
+              <button class="post-detail-button">${post.status.likes}</br>좋아요수</button>
+              <button class="post-detail-button">${post.status.views}</br>조회수</button>
+              <button class="post-detail-button">${post.status.comments}</br>댓글</button>
           </div>
       </article>
   `;

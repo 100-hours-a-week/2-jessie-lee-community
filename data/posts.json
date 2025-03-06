@@ -4,9 +4,11 @@
       "id": 1,
       "title": "졔스프리 1",
       "content": "content1",
-      "likes": 15,
-      "comments": 8,
-      "views": 234,
+      "status": {
+        "likes": 15,
+        "comments": 8,
+        "views": 234
+      },
       "date": "2025-02-15 14:30:22",
       "author": "키위농부"
     },
@@ -14,9 +16,11 @@
       "id": 2,
       "title": "졔스프리 2",
       "content": "content2",
-      "likes": 45,
-      "comments": 23,
-      "views": 567,
+      "status": {
+        "likes": 45,
+        "comments": 23,
+        "views": 567
+      },
       "date": "2025-02-17 09:15:45",
       "author": "맛집탐험가"
     },
@@ -24,9 +28,11 @@
       "id": 3,
       "title": "졔스프리 3",
       "content": "content3",
-      "likes": 89,
-      "comments": 34,
-      "views": 1234,
+      "status": {
+        "likes": 89,
+        "comments": 34,
+        "views": 1234
+      },
       "date": "2025-02-18 21:22:15",
       "author": "건강지킴이"
     },
@@ -34,9 +40,11 @@
       "id": 4,
       "title": "졔스프리 4",
       "content": "content4",
-      "likes": 89,
-      "comments": 34,
-      "views": 1234,
+      "status": {
+        "likes": 89,
+        "comments": 34,
+        "views": 1234
+      },
       "date": "2025-02-18 21:22:15",
       "author": "건강지킴이"
     },
@@ -44,9 +52,11 @@
       "id": 5,
       "title": "졔스프리 5",
       "content": "content5",
-      "likes": 89,
-      "comments": 34,
-      "views": 1234,
+      "status": {
+        "likes": 89,
+        "comments": 34,
+        "views": 1234
+      },
       "date": "2025-02-18 21:22:15",
       "author": "건강지킴이"
     },
@@ -54,9 +64,11 @@
       "id": 6,
       "title": "졔스프리 6",
       "content": "content6",
-      "likes": 89,
-      "comments": 34,
-      "views": 1234,
+      "status": {
+        "likes": 89,
+        "comments": 34,
+        "views": 1234
+      },
       "date": "2025-02-18 21:22:15",
       "author": "건강지킴이"
     }
