@@ -10,7 +10,27 @@
         "views": 234
       },
       "date": "2025-02-15 14:30:22",
-      "author": "키위농부"
+      "author": "키위농부",
+      "comments": [
+        {
+          "id": 1,
+          "content": "comment1",
+          "date": "2025-02-15 14:30:22",
+          "author": "키위농부"
+        },
+        {
+          "id": 2,
+          "content": "comment2",
+          "date": "2025-02-15 14:30:22",
+          "author": "키위농부"
+        },
+        {
+          "id": 3,
+          "content": "comment3",
+          "date": "2025-02-15 14:30:22",
+          "author": "키위농부"
+        }
+      ]
     },
     {
       "id": 2,

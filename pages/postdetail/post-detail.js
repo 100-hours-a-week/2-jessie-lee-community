@@ -34,6 +34,7 @@ async function loadPostDetail() {
 
 function displayPostDetail(post) {
   const postDetailContainer = document.getElementById("post-detail");
+  const postCommentsContainer = document.getElementById("post-comments");
 
   postDetailContainer.innerHTML = `
       <article class="post-detail">
@@ -58,5 +59,30 @@ function displayPostDetail(post) {
               <button class="post-detail-button">${post.status.comments}</br>댓글</button>
           </div>
       </article>
+  `;
+
+  // TODO : 댓글 목록 표시
+  postCommentsContainer.innerHTML = `
+    <div class="comments-section">
+      ${post.comments
+        .map(
+          (comment) => `
+        <div class="comment">
+          <div class="comment-info">
+            <div class="comment-author">
+              <div class="comment-name">${comment.author}</div>
+              <div class="comment-date">${formatDate(comment.date)}</div>
+            </div>
+            <div class="comment-text">${comment.content}</div>
+          </div>
+          <div class="post-detail-actions">
+              <button class="edit btn">수정</button>
+              <button class="delete btn">삭제</button>
+            </div>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
   `;
 }
