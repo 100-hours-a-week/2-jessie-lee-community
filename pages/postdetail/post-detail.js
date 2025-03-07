@@ -1,3 +1,4 @@
+import { getPostById } from "../../api/getPostById.js";
 import { formatDate } from "../../utils/formatDate.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -5,30 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function loadPostDetail() {
-  try {
-    // URL 파라미터에서 id 가져오기
-    const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get("id");
+  // URL 파라미터에서 id 가져오기
+  const urlParams = new URLSearchParams(window.location.search);
+  const postId = urlParams.get("id");
 
-    if (!postId) {
-      showError("게시글 ID가 유효하지 않습니다.");
-      return;
-    }
+  if (!postId) {
+    showError("게시글 ID가 유효하지 않습니다.");
+    return;
+  }
 
-    // 게시글 데이터 불러오기
-    const response = await fetch("../../data/posts.json");
-    const data = await response.json();
-
-    // ID에 해당하는 게시글 찾기
-    const post = data.posts.find((p) => p.id.toString() === postId);
-
-    if (post) {
-      displayPostDetail(post);
-    } else {
-      console.log("게시글을 찾을 수 없습니다.");
-    }
-  } catch (error) {
-    console.log("게시글을 불러오는 중 오류가 발생했습니다.");
+  const post = await getPostById(postId);
+  if (post) {
+    displayPostDetail(post);
   }
 }
 
