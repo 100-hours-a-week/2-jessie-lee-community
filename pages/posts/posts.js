@@ -31,9 +31,9 @@ function createPostElement(post) {
   postElement.innerHTML = `
         <div class="post-title">${post.title}</div>
         <div class="post-info">
-            <span>좋아요 ${post.likes}</span>
-            <span>댓글 ${post.comments}</span>
-            <span>조회수 ${post.views}</span>
+            <span>좋아요 ${post.status.likes}</span>
+            <span>댓글 ${post.status.comments}</span>
+            <span>조회수 ${post.status.views}</span>
             <span class="date">${formatDate(post.date)}</span>
         </div>
         <div class="horizontal-divider"></div>
