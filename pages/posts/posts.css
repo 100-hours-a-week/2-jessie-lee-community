@@ -47,7 +47,10 @@
   gap: 10px;
 
   background-color: #ffffff;
+  color: black;
   box-shadow: 3px 4px 4px 0 rgba(204, 204, 204, 0.25);
+
+  text-decoration: none;
 }
 
 .post-title {
