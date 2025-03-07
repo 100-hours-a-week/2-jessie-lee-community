@@ -1,20 +1,12 @@
 import { formatDate } from "../../utils/formatDate.js";
+import { getPosts } from "../../api/getPosts.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadPosts();
+  displayPosts();
 });
 
-async function loadPosts() {
-  try {
-    const response = await fetch("../../data/posts.json");
-    const data = await response.json();
-    displayPosts(data.posts);
-  } catch (error) {
-    console.error("게시글을 불러오는 중 오류가 발생했습니다:", error);
-  }
-}
-
-function displayPosts(posts) {
+async function displayPosts() {
+  const posts = await getPosts();
   const postsContainer = document.getElementById("posts-container");
 
   posts.forEach((post) => {
