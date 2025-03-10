@@ -5,7 +5,11 @@ const signupEmailInput = document.getElementById("signupEmailInput");
 const emailHelperText = document.getElementById("emailHelperText");
 const signupPasswordInput = document.getElementById("signupPasswordInput");
 const passwordHelperText = document.getElementById("passwordHelperText");
+const confirmPasswordInput = document.getElementById("confirmPasswordInput");
+const passwordConfirmHelperText = document.getElementById("passwordConfirmHelperText");
 const signupButton = document.getElementById("signupButton");
+
+let userPassword = "";
 
 signupEmailInput.addEventListener("focusout", function () {
   const email = this.value;
@@ -33,6 +37,22 @@ signupPasswordInput.addEventListener("focusout", function () {
     signupButton.style.backgroundColor = "#aca0eb";
   } else {
     passwordHelperText.textContent = "";
+    userPassword = this.value;
+    signupButton.style.backgroundColor = "#7f6aee";
+  }
+});
+
+confirmPasswordInput.addEventListener("focusout", function () {
+  const password = this.value;
+
+  if (password.trim().length <= 0) {
+    passwordConfirmHelperText.textContent = HELPER_TEXT.noConfirmPassword;
+    signupButton.style.backgroundColor = "#aca0eb";
+  } else if (userPassword !== password) {
+    passwordConfirmHelperText.textContent = HELPER_TEXT.unmatchPassword;
+    signupButton.style.backgroundColor = "#aca0eb";
+  } else {
+    passwordConfirmHelperText.textContent = "";
     signupButton.style.backgroundColor = "#7f6aee";
   }
 });
