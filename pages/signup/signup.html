@@ -15,12 +15,18 @@
       <h3 class="signupTitleText">회원가입</h3>
       <div class="signupInputContainer">
         <p class="signupInputTitleText">프로필 사진</p>
+        <span class="helperText">* 프로필 사진을 추가해주세요</span>
         <img class="profileImage" />
       </div>
       <div class="signupInputContainer">
         <p class="signupInputTitleText">이메일*</p>
-        <input type="email" class="signupInput" placeholder="이메일을 입력하세요" />
-        <span class="helperText">* helper text</span>
+        <input
+          type="email"
+          class="signupInput"
+          id="signupEmailInput"
+          placeholder="이메일을 입력하세요"
+        />
+        <span class="helperText" id="emailHelperText"></span>
       </div>
       <div class="signupInputContainer">
         <p class="signupInputTitleText">비밀번호*</p>
@@ -37,7 +43,7 @@
         <input type="email" class="signupInput" placeholder="닉네임을 입력하세요" />
         <span class="helperText">* helper text</span>
       </div>
-      <button type="button" class="signupButton">회원가입</button>
+      <button type="button" class="signupButton" id="signupButton">회원가입</button>
       <!-- <a class="resignButton" href="">회원 탈퇴</a>
       <a class="completeButton" id="completeButton" href="../passwordEdit/passwordEdit.html"
         >수정 완료</a
