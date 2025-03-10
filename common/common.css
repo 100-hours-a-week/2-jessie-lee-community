@@ -28,3 +28,7 @@ input {
 textarea {
   resize: none;
 }
+
+p {
+  margin: 0;
+}
