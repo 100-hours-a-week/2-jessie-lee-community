@@ -8,8 +8,4 @@ export const HELPER_TEXT = {
   noPassword: "*비밀번호를 입력해주세요.",
   noConfirmPassword: "*비밀번호 한번 더 입력해주세요.",
   unmatchPassword: "*비밀번호가 다릅니다.",
-  noNickname: "*닉네임을 입력해주세요.",
-  noblankNickname: "*띄어쓰기를 없애주세요.",
-  duplicateNickname: "*중복된 닉네임입니다.",
-  overMaxNickname: "*닉네임은 10자까지 작성 가능합니다.",
 };
