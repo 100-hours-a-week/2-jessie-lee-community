@@ -1,4 +1,17 @@
-export const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export function validateEmail(email) {
+  if (email.length <= 0) return { isValid: false, message: "*이메일을 입력해주세요." };
+
+  if (!emailRegex.test(email)) {
+    return {
+      isValid: false,
+      message: "*올바른 이메일 주소 형식을 입력해주세요. (예: example@example.com)",
+    };
+  }
+
+  return { isValid: true, message: "" };
+}
 
 export function isPasswordValid(password) {
   // 길이 체크

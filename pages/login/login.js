@@ -1,4 +1,4 @@
-import { emailRegex, isPasswordValid } from "../../utils/loginValidation.js";
+import { validateEmail, isPasswordValid } from "../../utils/loginValidation.js";
 
 const emailInput = document.getElementById("emailInput");
 const emailHelper = document.getElementById("emailHelper");
@@ -9,13 +9,17 @@ const loginButton = document.getElementById("loginButton");
 emailInput.addEventListener("input", function () {
   const email = this.value;
 
-  if (emailRegex.test(email)) {
-    emailHelper.textContent = "";
-    loginButton.style.backgroundColor = "#7f6aee";
-  } else {
-    emailHelper.textContent = "*올바른 이메일 주소 형식을 입력해주세요. (예: example@example.com)";
+  const { isValid, message } = validateEmail(email);
+
+  if (!isValid) {
+    loginButton.disabled = true;
     loginButton.style.backgroundColor = "#aca0eb";
+  } else {
+    loginButton.disabled = false;
+    loginButton.style.backgroundColor = "#7f6aee";
   }
+
+  emailHelper.textContent = message;
 });
 
 passwordInput.addEventListener("input", function () {

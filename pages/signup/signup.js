@@ -1,4 +1,4 @@
-import { emailRegex, isPasswordValid } from "../../utils/loginValidation.js";
+import { validateEmail, isPasswordValid } from "../../utils/loginValidation.js";
 import { isNicknameValid } from "../../utils/nicknameValidation.js";
 import { HELPER_TEXT } from "./HELPER_TEXT.js";
 
@@ -36,16 +36,10 @@ function updateSignupButtonState() {
 signupEmailInput.addEventListener("focusout", function () {
   const email = this.value;
 
-  if (emailRegex.test(email)) {
-    emailHelperText.textContent = "";
-    isEmailValid = true;
-  } else if (email.trim().length <= 0) {
-    emailHelperText.textContent = HELPER_TEXT.noEmail;
-    isEmailValid = false;
-  } else {
-    emailHelperText.textContent = HELPER_TEXT.unvalidEmail;
-    isEmailValid = false;
-  }
+  const { isValid, message } = validateEmail(email);
+
+  isEmailValid = isValid;
+  emailHelperText.textContent = message;
 
   updateSignupButtonState();
 });
