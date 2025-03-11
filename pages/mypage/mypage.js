@@ -1,4 +1,4 @@
-import { isNicknameValid } from "../../utils/nicknameValidation.js";
+import { validateNickname } from "../../utils/validation.js";
 
 const profileNicknameInput = document.getElementById("profileNicknameInput");
 const editButton = document.getElementById("editButton");
@@ -8,7 +8,7 @@ const completeButton = document.getElementById("completeButton");
 editButton.addEventListener("click", function () {
   const nickname = profileNicknameInput.value;
 
-  const { isValid, message } = isNicknameValid(nickname);
+  const { isValid, message } = validateNickname(nickname);
   nicknameHelperText.textContent = message;
   completeButton.disabled = !isValid;
 

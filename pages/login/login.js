@@ -1,4 +1,4 @@
-import { validateEmail, validatePassword } from "../../utils/loginValidation.js";
+import { validateEmail, validatePassword } from "../../utils/validation.js";
 
 const emailInput = document.getElementById("emailInput");
 const emailHelper = document.getElementById("emailHelper");

@@ -1,5 +1,4 @@
-import { validateEmail, validatePassword } from "../../utils/loginValidation.js";
-import { isNicknameValid } from "../../utils/nicknameValidation.js";
+import { validateEmail, validatePassword, validateNickname } from "../../utils/validation.js";
 import { HELPER_TEXT } from "./HELPER_TEXT.js";
 
 const signupEmailInput = document.getElementById("signupEmailInput");
@@ -86,7 +85,7 @@ confirmPasswordInput.addEventListener("focusout", function () {
 nicknameInput.addEventListener("focusout", function () {
   const nickname = this.value;
 
-  const { isValid, message } = isNicknameValid(nickname);
+  const { isValid, message } = validateNickname(nickname);
   isNicknameValid = isValid;
   nicknameHelperText.textContent = message;
 
