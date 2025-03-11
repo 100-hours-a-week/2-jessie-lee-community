@@ -1,4 +1,4 @@
-import { validateEmail, isPasswordValid } from "../../utils/loginValidation.js";
+import { validateEmail, validatePassword } from "../../utils/loginValidation.js";
 import { isNicknameValid } from "../../utils/nicknameValidation.js";
 import { HELPER_TEXT } from "./HELPER_TEXT.js";
 
@@ -47,16 +47,12 @@ signupEmailInput.addEventListener("focusout", function () {
 signupPasswordInput.addEventListener("focusout", function () {
   const password = this.value;
 
-  if (password.trim().length <= 0) {
-    passwordHelperText.textContent = HELPER_TEXT.noPassword;
-    isPasswordValid = false;
-  } else if (!isPasswordValid(password)) {
-    passwordHelperText.textContent = HELPER_TEXT.unvalidPassword;
-    isPasswordValid = false;
-  } else {
-    passwordHelperText.textContent = "";
+  const { isValid, message } = validatePassword(password);
+  isPasswordValid = isValid;
+  passwordHelperText.textContent = message;
+
+  if (isValid) {
     userPassword = this.value;
-    isPasswordValid = true;
 
     if (confirmPasswordInput.value) {
       const confirmPass = confirmPasswordInput.value;
