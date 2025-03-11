@@ -8,5 +8,5 @@ export function isNicknameValid(nickname) {
     return { isValid: false, message: "*띄어쓰기를 없애주세요." };
   }
 
-  return { isValid: true, message: "수정 완료" };
+  return { isValid: true, message: "" };
 }

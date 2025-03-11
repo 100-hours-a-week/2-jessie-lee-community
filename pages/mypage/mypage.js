@@ -9,11 +9,12 @@ editButton.addEventListener("click", function () {
   const nickname = profileNicknameInput.value;
 
   const { isValid, message } = isNicknameValid(nickname);
+  nicknameHelperText.textContent = message;
+  completeButton.disabled = !isValid;
+
   if (isValid) {
-    nicknameHelperText.textContent = message;
     completeButton.style.backgroundColor = "#7f6aee";
   } else {
-    nicknameHelperText.textContent = message;
     completeButton.style.backgroundColor = "#aca0eb";
   }
 });

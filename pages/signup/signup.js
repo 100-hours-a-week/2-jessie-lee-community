@@ -87,15 +87,8 @@ nicknameInput.addEventListener("focusout", function () {
   const nickname = this.value;
 
   const { isValid, message } = isNicknameValid(nickname);
-  if (!isValid) {
-    nicknameHelperText.textContent = message;
-    signupButton.style.backgroundColor = "#aca0eb";
-    isNicknameValid = false;
-  } else {
-    nicknameHelperText.textContent = "";
-    signupButton.style.backgroundColor = "#7f6aee";
-    isNicknameValid = true;
-  }
+  isNicknameValid = isValid;
+  nicknameHelperText.textContent = message;
 
   updateSignupButtonState();
 });
