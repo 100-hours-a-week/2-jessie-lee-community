@@ -1,5 +1,9 @@
-import { validateEmail, validatePassword, validateNickname } from "../../utils/validation.js";
-import { HELPER_TEXT } from "./HELPER_TEXT.js";
+import {
+  validateEmail,
+  validatePassword,
+  validateConfirmPassword,
+  validateNickname,
+} from "../../utils/validation.js";
 
 const signupEmailInput = document.getElementById("signupEmailInput");
 const emailHelperText = document.getElementById("emailHelperText");
@@ -55,10 +59,9 @@ signupPasswordInput.addEventListener("focusout", function () {
 
     if (confirmPasswordInput.value) {
       const confirmPass = confirmPasswordInput.value;
-      isPasswordConfirmValid = userPassword === confirmPass;
-      passwordConfirmHelperText.textContent = isPasswordConfirmValid
-        ? ""
-        : HELPER_TEXT.unmatchPassword;
+      const { isValid, message } = validateConfirmPassword(userPassword, confirmPass);
+      isPasswordConfirmValid = isValid;
+      passwordConfirmHelperText.textContent = message;
     }
   }
 
@@ -68,16 +71,9 @@ signupPasswordInput.addEventListener("focusout", function () {
 confirmPasswordInput.addEventListener("focusout", function () {
   const password = this.value;
 
-  if (password.trim().length <= 0) {
-    passwordConfirmHelperText.textContent = HELPER_TEXT.noConfirmPassword;
-    isPasswordConfirmValid = false;
-  } else if (userPassword !== password) {
-    passwordConfirmHelperText.textContent = HELPER_TEXT.unmatchPassword;
-    isPasswordConfirmValid = false;
-  } else {
-    passwordConfirmHelperText.textContent = "";
-    isPasswordConfirmValid = true;
-  }
+  const { isValid, message } = validateConfirmPassword(userPassword, password);
+  isPasswordConfirmValid = isValid;
+  passwordConfirmHelperText.textContent = message;
 
   updateSignupButtonState();
 });

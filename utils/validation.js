@@ -41,6 +41,19 @@ export function validatePassword(password) {
   return { isValid: true, message: "" };
 }
 
+export function validateConfirmPassword(password, confirmPassword) {
+  // 입력되었는지 체크
+  if (confirmPassword.length <= 0)
+    return { isValid: false, message: "*비밀번호 한번 더 입력해주세요." };
+
+  // 비밀번호와 비밀번호 확인이 같은지 체크
+  if (password !== confirmPassword) {
+    return { isValid: false, message: "*비밀번호가 다릅니다." };
+  }
+
+  return { isValid: true, message: "" };
+}
+
 export function validateNickname(nickname) {
   if (nickname.length <= 0) return { isValid: false, message: "*닉네임을 입력해주세요." };
   // 길이 체크
