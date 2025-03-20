@@ -87,3 +87,7 @@ nicknameInput.addEventListener("focusout", function () {
 
   updateSignupButtonState();
 });
+
+signupButton.addEventListener("click", function () {
+  // add
+});
