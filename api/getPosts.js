@@ -23,7 +23,12 @@ import { BASE_URL } from "../config.js";
  */
 export async function getPosts() {
   try {
-    const response = await fetch(BASE_URL + "/posts");
+    const response = await fetch(BASE_URL + "/posts", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
     return data;
   } catch (error) {
