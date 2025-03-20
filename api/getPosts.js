@@ -1,3 +1,5 @@
+import { BASE_URL } from "../config.js";
+
 /**
  * @typedef {Object} Post
  * @property {string} id - 게시글 고유 식별자
@@ -21,7 +23,7 @@
  */
 export async function getPosts() {
   try {
-    const response = await fetch("http://localhost:8080/posts");
+    const response = await fetch(BASE_URL + "/posts");
     const data = await response.json();
     return data;
   } catch (error) {
