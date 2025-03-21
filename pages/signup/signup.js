@@ -1,3 +1,4 @@
+import { postUser } from "../../api/postUser.js";
 import {
   validateEmail,
   validatePassword,
@@ -16,6 +17,9 @@ const nicknameHelperText = document.getElementById("nicknameHelperText");
 const signupButton = document.getElementById("signupButton");
 
 let userPassword = "";
+let userEmail = "";
+let userNickname = "";
+
 let isEmailValid = false;
 let isPasswordValid = false;
 let isPasswordConfirmValid = false;
@@ -41,6 +45,7 @@ signupEmailInput.addEventListener("focusout", function () {
 
   const { isValid, message } = validateEmail(email);
 
+  userEmail = isValid && email;
   isEmailValid = isValid;
   emailHelperText.textContent = message;
 
@@ -60,6 +65,8 @@ signupPasswordInput.addEventListener("focusout", function () {
     if (confirmPasswordInput.value) {
       const confirmPass = confirmPasswordInput.value;
       const { isValid, message } = validateConfirmPassword(userPassword, confirmPass);
+
+      userPassword = isValid && password;
       isPasswordConfirmValid = isValid;
       passwordConfirmHelperText.textContent = message;
     }
@@ -72,6 +79,7 @@ confirmPasswordInput.addEventListener("focusout", function () {
   const password = this.value;
 
   const { isValid, message } = validateConfirmPassword(userPassword, password);
+
   isPasswordConfirmValid = isValid;
   passwordConfirmHelperText.textContent = message;
 
@@ -82,12 +90,15 @@ nicknameInput.addEventListener("focusout", function () {
   const nickname = this.value;
 
   const { isValid, message } = validateNickname(nickname);
+
+  userNickname = isValid && nickname;
   isNicknameValid = isValid;
   nicknameHelperText.textContent = message;
 
   updateSignupButtonState();
 });
 
-signupButton.addEventListener("click", function () {
-  // add
+signupButton.addEventListener("click", async function () {
+  const res = await postUser(userEmail, userPassword, userNickname);
+  console.log(res);
 });
