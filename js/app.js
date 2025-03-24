@@ -1,6 +1,8 @@
 import Router from "./router.js";
 import loginView from "../pages/login/loginView.js";
 import loginScript from "../pages/login/loginScript.js";
+import postsScript from "../pages/posts/postsScript.js";
+import postsView from "../pages/posts/postsView.js";
 
 const routes = [
   {
@@ -16,6 +18,12 @@ const routes = [
     view: loginView,
     script: loginScript,
     css: "pages/login/login.css",
+  },
+  {
+    path: /^\/posts\/?$/, // 게시글 목록 보기
+    view: postsView,
+    script: postsScript,
+    css: "pages/posts/posts.css",
   },
 ];
 

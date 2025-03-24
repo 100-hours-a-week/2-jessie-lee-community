@@ -6,9 +6,9 @@ import { getPosts } from "../../api/getPosts.js";
  * @typedef {import('../../api/getPosts.js').Post} Post
  */
 
-document.addEventListener("DOMContentLoaded", () => {
+export default function postsScript() {
   displayPosts();
-});
+}
 
 async function displayPosts() {
   /** @type {Post[]} */
@@ -27,16 +27,16 @@ function createPostElement(/** @param {Post} post */ post) {
   postElement.href = `../postdetail/post-detail.html?id=${post.id}`;
 
   postElement.innerHTML = `
-        <div class="post-title">${post.title}</div>
-        <div class="post-info">
-            <span>좋아요 ${post.likeCount}</span>
-            <span>댓글 ${post.commentCount}</span>
-            <span>조회수 ${post.viewCount}</span>
-            <span class="date">${formatDate(post.createdAt)}</span>
-        </div>
-        <div class="horizontal-divider"></div>
-        <div class="author-text">${post.userNickname}</div>
-    `;
+          <div class="post-title">${post.title}</div>
+          <div class="post-info">
+              <span>좋아요 ${post.likeCount}</span>
+              <span>댓글 ${post.commentCount}</span>
+              <span>조회수 ${post.viewCount}</span>
+              <span class="date">${formatDate(post.createdAt)}</span>
+          </div>
+          <div class="horizontal-divider"></div>
+          <div class="author-text">${post.userNickname}</div>
+      `;
 
   return postElement;
 }
