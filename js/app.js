@@ -3,6 +3,8 @@ import loginView from "../pages/login/loginView.js";
 import loginScript from "../pages/login/loginScript.js";
 import postsScript from "../pages/posts/postsScript.js";
 import postsView from "../pages/posts/postsView.js";
+import postDetailView from "../pages/postdetail/postDetailView.js";
+import postDetailScript from "../pages/postdetail/postDetailScript.js";
 
 const routes = [
   {
@@ -24,6 +26,12 @@ const routes = [
     view: postsView,
     script: postsScript,
     css: "pages/posts/posts.css",
+  },
+  {
+    path: /^\/post-detail\/(\d+)\/?$/, // 게시글 상세보기
+    view: postDetailView,
+    script: postDetailScript,
+    css: "pages/postdetail/post-detail.css",
   },
 ];
 

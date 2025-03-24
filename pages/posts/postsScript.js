@@ -24,7 +24,7 @@ async function displayPosts() {
 function createPostElement(/** @param {Post} post */ post) {
   const postElement = document.createElement("a");
   postElement.className = "post";
-  postElement.href = `../postdetail/post-detail.html?id=${post.id}`;
+  postElement.href = `/post-detail/${post.id}`;
 
   postElement.innerHTML = `
           <div class="post-title">${post.title}</div>

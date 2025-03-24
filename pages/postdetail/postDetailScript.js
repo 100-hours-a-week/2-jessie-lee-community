@@ -1,27 +1,34 @@
-import { getPostById } from "../../api/getPostById.js";
+import { getPostDetail } from "../../api/getPostDetail.js";
 import { formatDate } from "../../utils/formatDate.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+/**
+ * Post 타입을 import합니다.
+ * @typedef {import('../../api/getPostDetail.js').PostDetail} PostDetail
+ */
+
+export default function postDetailScript() {
   loadPostDetail();
-});
+}
 
 async function loadPostDetail() {
   // URL 파라미터에서 id 가져오기
-  const urlParams = new URLSearchParams(window.location.search);
-  const postId = urlParams.get("id");
+  const path = window.location.pathname;
+  const match = path.match(/\/post-detail\/(\d+)/);
+  const postId = match ? match[1] : null;
 
   if (!postId) {
     showError("게시글 ID가 유효하지 않습니다.");
     return;
   }
 
-  const post = await getPostById(postId);
+  /** @type {PostDetail} */
+  const post = await getPostDetail(postId);
   if (post) {
     displayPostDetail(post);
   }
 }
 
-function displayPostDetail(post) {
+function displayPostDetail(/** @param {PostDetail} post */ post) {
   const postDetailContainer = document.getElementById("post-detail");
   const postCommentsContainer = document.getElementById("post-comments");
 
@@ -30,8 +37,8 @@ function displayPostDetail(post) {
           <h1 class="post-detail-title">${post.title}</h1>
           <div class="post-detail-info">
             <div class="post-detail-info-text">
-              <span class="author">${post.author}</span>
-              <span class="date">${formatDate(post.date)}</span>
+              <span class="author">${post.userNickname}</span>
+              <span class="date">${formatDate(post.createdAt)}</span>
             </div>
             <div class="post-detail-actions">
               <button class="edit btn">수정</button>
@@ -43,14 +50,13 @@ function displayPostDetail(post) {
               ${post.content}
           </div>
           <div class="post-detail-stats">
-              <button class="post-detail-button">${post.status.likes}</br>좋아요수</button>
-              <button class="post-detail-button">${post.status.views}</br>조회수</button>
-              <button class="post-detail-button">${post.status.comments}</br>댓글</button>
+              <button class="post-detail-button">${post.likeCount}</br>좋아요수</button>
+              <button class="post-detail-button">${post.viewCount}</br>조회수</button>
+              <button class="post-detail-button">${post.commentCount}</br>댓글</button>
           </div>
       </article>
   `;
 
-  // TODO : 댓글 목록 표시
   postCommentsContainer.innerHTML = `
     <div class="comments-section">
       ${post.comments
@@ -59,8 +65,8 @@ function displayPostDetail(post) {
         <div class="comment">
           <div class="comment-info">
             <div class="comment-author">
-              <div class="comment-name">${comment.author}</div>
-              <div class="comment-date">${formatDate(comment.date)}</div>
+              <div class="comment-name">${comment.userNickname}</div>
+              <div class="comment-date">${formatDate(comment.createdAt)}</div>
             </div>
             <div class="comment-text">${comment.content}</div>
           </div>
