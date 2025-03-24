@@ -1,4 +1,6 @@
 import Router from "./router.js";
+import loginView from "../pages/login/loginView.js";
+import loginScript from "../pages/login/loginScript.js";
 
 const routes = [
   {
@@ -8,6 +10,12 @@ const routes = [
                    <a href="/posts" data-link>게시판</a>
                    <a href="/mypage" data-link>마이페이지</a>
                  </section>`,
+  },
+  {
+    path: /^\/login\/?$/, // Login
+    view: loginView,
+    script: loginScript,
+    css: "pages/login/login.css",
   },
 ];
 

@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="kr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/assets/kiwi-fruit.png" />
-    <link rel="stylesheet" type="text/css" href="login.css" />
-    <link rel="stylesheet" type="text/css" href="../../common/common.css" />
-    <link rel="stylesheet" type="text/css" href="../../components/navbar/navbar.css" />
-    <title>Jessie's Community</title>
-  </head>
-  <body>
-    <div class="navBar">Jessie's Community</div>
+// Returns the HTML for the login page
+export default function loginView() {
+  return `
     <div class="loginWrapper">
       <h3 class="loginTitleText">로그인</h3>
       <form class="loginForm">
@@ -27,8 +17,7 @@
         <!-- TODO: 로그인 기능 구현 -->
         <a class="loginButton" id="loginButton" href="../posts/posts.html"> 로그인 </a>
       </form>
-      <a href="../signup/signup.html" class="signupButton">회원가입</a>
+      <a href="/signup" class="signupButton">회원가입</a>
     </div>
-    <script type="module" src="login.js"></script>
-  </body>
-</html>
+  `;
+}
