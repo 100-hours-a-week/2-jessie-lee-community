@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/kiwi-fruit.png" />
     <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="common/reset.css" />
+    <link rel="stylesheet" type="text/css" href="components/navbar/navbar.css" />
     <title>Jessie's Community</title>
   </head>
   <body>
-    <section class="wrap">
-      <a href="/pages/login/login.html">로그인</a>
-      <a href="/pages/posts/posts.html">게시판</a>
-      <a href="/pages/mypage/mypage.html">마이페이지</a>
-    </section>
+    <div class="navBar">Jessie's Community</div>
+    <!-- 페이지 콘텐츠를 표시할 메인 컨테이너 -->
+    <div id="app"></div>
+    <!-- 메인 SPA script -->
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>
