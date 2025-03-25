@@ -1,4 +1,6 @@
 import Router from "./core/router.js";
+import ComponentManager from "./components/ComponentManager.js";
+import { loadComponent } from "../utils/componentLoader.js";
 import loginView from "./pages/login/loginView.js";
 import loginScript from "./pages/login/loginScript.js";
 import postsScript from "./pages/posts/postsScript.js";
@@ -10,6 +12,43 @@ import signupScript from "./pages/signup/signupScript.js";
 import mypageView from "./pages/mypage/myPageView.js";
 import mypageScript from "./pages/mypage/mypageScript.js";
 import passwordEditView from "./pages/passwordEdit/passwordEditView.js";
+import { COMPONENT_IDS } from "./components/ComponentIds.js";
+import NavBar from "./components/navBar/NavBar.js";
+
+// 컴포넌트 매니저 초기화
+const componentManager = new ComponentManager();
+window.componentManager = componentManager; // 전역 접근용 (선택적)
+
+// 페이지 로드 시 NavBar 컴포넌트 초기화
+document.addEventListener("DOMContentLoaded", async () => {
+  const navbarContainer = document.getElementById("navbar-container");
+  if (!navbarContainer) return;
+
+  const navbar = await loadComponent(
+    NavBar,
+    navbarContainer,
+    {},
+    "/src/components/navBar/navbar.css"
+  );
+  componentManager.register(COMPONENT_IDS.NAVBAR, navbar);
+});
+
+// 사용자 로그인 상태 변경 시 NavBar 업데이트하는 함수
+// export function updateUserLoginState(isLoggedIn, user = null) {
+//   // 로컬 스토리지 업데이트
+//   localStorage.setItem("isLoggedIn", isLoggedIn);
+//   if (user) {
+//     localStorage.setItem("user", JSON.stringify(user));
+//   } else {
+//     localStorage.removeItem("user");
+//   }
+
+//   // NavBar 컴포넌트 업데이트
+//   const navbar = componentManager.get("navbar");
+//   if (navbar) {
+//     navbar.setState({ isLoggedIn, user });
+//   }
+// }
 
 const routes = [
   {
