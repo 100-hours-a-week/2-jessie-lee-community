@@ -1,4 +1,4 @@
-import { validateNickname } from "../../utils/validation.js";
+import { validateNickname } from "../../../utils/validation.js";
 
 export default function mypageScript() {
   const profileNicknameInput = document.getElementById("profileNicknameInput");

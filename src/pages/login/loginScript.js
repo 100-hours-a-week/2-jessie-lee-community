@@ -1,5 +1,5 @@
-import useState from "../../js/useState.js";
-import { validateEmail, validatePassword } from "../../utils/validation.js";
+import useState from "../../../js/useState.js";
+import { validateEmail, validatePassword } from "../../../utils/validation.js";
 
 export default function loginScript() {
   const emailInput = document.getElementById("emailInput");

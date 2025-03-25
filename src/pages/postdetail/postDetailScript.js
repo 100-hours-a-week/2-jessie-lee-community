@@ -1,5 +1,5 @@
-import { getPostDetail } from "../../api/getPostDetail.js";
-import { formatDate } from "../../utils/formatDate.js";
+import { getPostDetail } from "../../../api/getPostDetail.js";
+import { formatDate } from "../../../utils/formatDate.js";
 
 /**
  * Post 타입을 import합니다.

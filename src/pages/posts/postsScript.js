@@ -1,5 +1,5 @@
-import { formatDate } from "../../utils/formatDate.js";
-import { getPosts } from "../../api/getPosts.js";
+import { formatDate } from "../../../utils/formatDate.js";
+import { getPosts } from "../../../api/getPosts.js";
 
 /**
  * Post 타입을 import합니다.

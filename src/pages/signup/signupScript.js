@@ -1,11 +1,11 @@
-import useState from "../../js/useState.js";
-import { postUser } from "../../api/postUser.js";
+import useState from "../../../js/useState.js";
+import { postUser } from "../../../api/postUser.js";
 import {
   validateEmail,
   validatePassword,
   validateConfirmPassword,
   validateNickname,
-} from "../../utils/validation.js";
+} from "../../../utils/validation.js";
 
 export default function signupScript() {
   const signupEmailInput = document.getElementById("signupEmailInput");

@@ -1,15 +1,15 @@
-import Router from "./router.js";
-import loginView from "../pages/login/loginView.js";
-import loginScript from "../pages/login/loginScript.js";
-import postsScript from "../pages/posts/postsScript.js";
-import postsView from "../pages/posts/postsView.js";
-import postDetailView from "../pages/postdetail/postDetailView.js";
-import postDetailScript from "../pages/postdetail/postDetailScript.js";
-import signupView from "../pages/signup/signupView.js";
-import signupScript from "../pages/signup/signupScript.js";
-import mypageView from "../pages/mypage/myPageView.js";
-import mypageScript from "../pages/mypage/mypageScript.js";
-import passwordEditView from "../pages/passwordEdit/passwordEditView.js";
+import Router from "./core/router.js";
+import loginView from "./pages/login/loginView.js";
+import loginScript from "./pages/login/loginScript.js";
+import postsScript from "./pages/posts/postsScript.js";
+import postsView from "./pages/posts/postsView.js";
+import postDetailView from "./pages/postdetail/postDetailView.js";
+import postDetailScript from "./pages/postdetail/postDetailScript.js";
+import signupView from "./pages/signup/signupView.js";
+import signupScript from "./pages/signup/signupScript.js";
+import mypageView from "./pages/mypage/myPageView.js";
+import mypageScript from "./pages/mypage/mypageScript.js";
+import passwordEditView from "./pages/passwordEdit/passwordEditView.js";
 
 const routes = [
   {
@@ -24,36 +24,36 @@ const routes = [
     path: /^\/login\/?$/, // Login
     view: loginView,
     script: loginScript,
-    css: "pages/login/login.css",
+    css: "/src/pages/login/login.css",
   },
   {
     path: /^\/posts\/?$/, // 게시글 목록 보기
     view: postsView,
     script: postsScript,
-    css: "pages/posts/posts.css",
+    css: "/src/pages/posts/posts.css",
   },
   {
     path: /^\/post-detail\/(\d+)\/?$/, // 게시글 상세보기
     view: postDetailView,
     script: postDetailScript,
-    css: "pages/postdetail/post-detail.css",
+    css: "/src/pages/postdetail/post-detail.css",
   },
   {
     path: /^\/signup\/?$/, // 회원가입
     view: signupView,
     script: signupScript,
-    css: "pages/signup/signup.css",
+    css: "/src/pages/signup/signup.css",
   },
   {
     path: /^\/mypage\/?$/, // 마이 페이지
     view: mypageView,
     script: mypageScript,
-    css: "pages/mypage/mypage.css",
+    css: "/src/pages/mypage/mypage.css",
   },
   {
     path: /^\/passwordEdit\/?$/, // 비밀번호 변경
     view: passwordEditView,
-    css: "pages/passwordEdit/passwordEdit.css",
+    css: "/src/pages/passwordEdit/passwordEdit.css",
   },
 ];
 
