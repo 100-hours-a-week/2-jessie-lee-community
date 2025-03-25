@@ -1,3 +1,4 @@
+import useState from "../../js/useState.js";
 import { postUser } from "../../api/postUser.js";
 import {
   validateEmail,
@@ -17,9 +18,9 @@ export default function signupScript() {
   const nicknameHelperText = document.getElementById("nicknameHelperText");
   const signupButton = document.getElementById("signupButton");
 
-  let userPassword = "";
-  let userEmail = "";
-  let userNickname = "";
+  const [userPassword, setUserPassword] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userNickname, setUserNickname] = useState("");
 
   let isEmailValid = false;
   let isPasswordValid = false;
@@ -46,7 +47,7 @@ export default function signupScript() {
 
     const { isValid, message } = validateEmail(email);
 
-    userEmail = isValid && email;
+    if (isValid) setUserEmail(email);
     isEmailValid = isValid;
     emailHelperText.textContent = message;
 
@@ -61,13 +62,13 @@ export default function signupScript() {
     passwordHelperText.textContent = message;
 
     if (isValid) {
-      userPassword = this.value;
+      setUserPassword(this.value);
 
       if (confirmPasswordInput.value) {
         const confirmPass = confirmPasswordInput.value;
         const { isValid, message } = validateConfirmPassword(userPassword, confirmPass);
 
-        userPassword = isValid && password;
+        if (isValid) setUserPassword(password);
         isPasswordConfirmValid = isValid;
         passwordConfirmHelperText.textContent = message;
       }
@@ -92,7 +93,7 @@ export default function signupScript() {
 
     const { isValid, message } = validateNickname(nickname);
 
-    userNickname = isValid && nickname;
+    if (isValid) setUserNickname(nickname);
     isNicknameValid = isValid;
     nicknameHelperText.textContent = message;
 

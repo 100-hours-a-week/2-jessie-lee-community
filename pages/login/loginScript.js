@@ -1,3 +1,4 @@
+import useState from "../../js/useState.js";
 import { validateEmail, validatePassword } from "../../utils/validation.js";
 
 export default function loginScript() {
@@ -7,8 +8,8 @@ export default function loginScript() {
   const passwordHelper = document.getElementById("passwordHelper");
   const loginButton = document.getElementById("loginButton");
 
-  let isEmailValid = false;
-  let isPasswordValid = false;
+  const [isEmailValid, setEmailValid] = useState(false);
+  const [isPasswordValid, setPasswordValid] = useState(false);
 
   // 버튼 초기 상태를 disabled로 설정
   loginButton.disabled = true;
@@ -28,7 +29,7 @@ export default function loginScript() {
   emailInput.addEventListener("input", function () {
     const email = this.value;
     const { isValid, message } = validateEmail(email);
-    isEmailValid = isValid;
+    setEmailValid(isValid);
     emailHelper.textContent = message;
     updateLoginButtonState();
   });
@@ -36,7 +37,7 @@ export default function loginScript() {
   passwordInput.addEventListener("input", function () {
     const password = this.value;
     const { isValid, message } = validatePassword(password);
-    isPasswordValid = isValid;
+    setPasswordValid(isValid);
     passwordHelper.textContent = message;
     updateLoginButtonState();
   });
