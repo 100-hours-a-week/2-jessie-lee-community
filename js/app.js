@@ -5,6 +5,8 @@ import postsScript from "../pages/posts/postsScript.js";
 import postsView from "../pages/posts/postsView.js";
 import postDetailView from "../pages/postdetail/postDetailView.js";
 import postDetailScript from "../pages/postdetail/postDetailScript.js";
+import signupView from "../pages/signup/signupView.js";
+import signupScript from "../pages/signup/signupScript.js";
 
 const routes = [
   {
@@ -32,6 +34,12 @@ const routes = [
     view: postDetailView,
     script: postDetailScript,
     css: "pages/postdetail/post-detail.css",
+  },
+  {
+    path: /^\/signup\/?$/, // 회원가입
+    view: signupView,
+    script: signupScript,
+    css: "pages/signup/signup.css",
   },
 ];
 

@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="kr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/assets/kiwi-fruit.png" />
-    <link rel="stylesheet" type="text/css" href="signup.css" />
-    <link rel="stylesheet" type="text/css" href="../../common/common.css" />
-    <link rel="stylesheet" type="text/css" href="../../components/navbar/navbar.css" />
-    <title>Jessie's Community</title>
-  </head>
-  <body>
-    <div class="navBar">Jessie's Community</div>
+export default function signupView() {
+  return `
     <div class="signupWrapper">
       <h3 class="signupTitleText">회원가입</h3>
       <div class="signupInputContainer">
@@ -59,7 +48,5 @@
         <span class="helperText" id="nicknameHelperText"></span>
       </div>
       <button type="button" class="signupButton" id="signupButton">회원가입</button>
-    </div>
-    <script type="module" src="signup.js"></script>
-  </body>
-</html>
+    </div>`;
+}
