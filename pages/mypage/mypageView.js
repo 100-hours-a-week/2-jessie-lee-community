@@ -22,7 +22,7 @@ export default function mypageView() {
       </div>
       <button type="button" class="editButton" id="editButton">수정하기</button>
       <a class="resignButton" href="">회원 탈퇴</a>
-      <a class="completeButton" id="completeButton" href="../passwordEdit/passwordEdit.html"
+      <a class="completeButton" id="completeButton" href="/passwordEdit"
         >수정 완료</a
       >
     </div>`;

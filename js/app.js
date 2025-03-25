@@ -9,6 +9,7 @@ import signupView from "../pages/signup/signupView.js";
 import signupScript from "../pages/signup/signupScript.js";
 import mypageView from "../pages/mypage/myPageView.js";
 import mypageScript from "../pages/mypage/mypageScript.js";
+import passwordEditView from "../pages/passwordEdit/passwordEditView.js";
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     view: mypageView,
     script: mypageScript,
     css: "pages/mypage/mypage.css",
+  },
+  {
+    path: /^\/passwordEdit\/?$/, // 비밀번호 변경
+    view: passwordEditView,
+    css: "pages/passwordEdit/passwordEdit.css",
   },
 ];
 
