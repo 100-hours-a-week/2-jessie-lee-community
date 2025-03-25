@@ -7,6 +7,8 @@ import postDetailView from "../pages/postdetail/postDetailView.js";
 import postDetailScript from "../pages/postdetail/postDetailScript.js";
 import signupView from "../pages/signup/signupView.js";
 import signupScript from "../pages/signup/signupScript.js";
+import mypageView from "../pages/mypage/myPageView.js";
+import mypageScript from "../pages/mypage/mypageScript.js";
 
 const routes = [
   {
@@ -40,6 +42,12 @@ const routes = [
     view: signupView,
     script: signupScript,
     css: "pages/signup/signup.css",
+  },
+  {
+    path: /^\/mypage\/?$/, // 마이 페이지
+    view: mypageView,
+    script: mypageScript,
+    css: "pages/mypage/mypage.css",
   },
 ];
 

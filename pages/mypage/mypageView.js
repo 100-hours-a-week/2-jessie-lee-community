@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="kr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/assets/kiwi-fruit.png" />
-    <link rel="stylesheet" type="text/css" href="mypage.css" />
-    <link rel="stylesheet" type="text/css" href="../../common/common.css" />
-    <link rel="stylesheet" type="text/css" href="../../components/navbar/navbar.css" />
-    <title>Jessie's Community</title>
-  </head>
-  <body>
-    <div class="navBar">Jessie's Community</div>
+export default function mypageView() {
+  return `
     <div class="mypageWrapper">
       <h3 class="mypageTitleText">회원정보수정</h3>
       <div class="profileEditContainer">
@@ -36,7 +25,5 @@
       <a class="completeButton" id="completeButton" href="../passwordEdit/passwordEdit.html"
         >수정 완료</a
       >
-    </div>
-    <script type="module" src="mypage.js"></script>
-  </body>
-</html>
+    </div>`;
+}
