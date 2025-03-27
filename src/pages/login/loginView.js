@@ -1,4 +1,3 @@
-// Returns the HTML for the login page
 export default function loginView() {
   return `
     <div class="loginWrapper">

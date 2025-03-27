@@ -1,6 +1,7 @@
 import { postLogin } from "../../../api/postLogin.js";
 // import useState from "../../../js/useState.js";
 import { validateEmail, validatePassword } from "../../../utils/validation.js";
+import { getCSSVariable } from "../../../utils/getCSSVariable.js";
 
 export default function loginScript() {
   const emailInput = document.getElementById("emailInput");
@@ -16,16 +17,16 @@ export default function loginScript() {
 
   // 버튼 초기 상태를 disabled로 설정
   loginButton.disabled = true;
-  loginButton.style.backgroundColor = "#aca0eb";
+  loginButton.style.backgroundColor = getCSSVariable("--primary-color-disabled");
 
   // 모든 validation이 통과되었는지 확인하고 버튼 상태 업데이트
   function updateLoginButtonState() {
     if (isEmailValid && isPasswordValid) {
       loginButton.disabled = false;
-      loginButton.style.backgroundColor = "#7f6aee";
+      loginButton.style.backgroundColor = getCSSVariable("--primary-color");
     } else {
       loginButton.disabled = true;
-      loginButton.style.backgroundColor = "#aca0eb";
+      loginButton.style.backgroundColor = getCSSVariable("--primary-color-disabled");
     }
   }
 

@@ -1,7 +1,9 @@
 :root {
   /* 색상 */
-  --primary-color: #07553b;
-  --secondary-color: #ced46a;
+  --primary-color: rgb(7, 85, 59);
+  --primary-color-disabled: rgba(7, 85, 59, 0.3);
+  --secondary-color: rgb(206, 212, 106);
+  --secondary-color-disabled: rgba(206, 212, 106, 0.3);
   --background-color: #f6f6e6;
   --text-color: #000000;
   --text-color-light: #ffffff;
