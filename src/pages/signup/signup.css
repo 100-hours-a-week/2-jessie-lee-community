@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("../../../common/variables.css");
 
 .signupWrapper {
   width: 400px;
@@ -8,7 +9,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
+
+  margin-top: 20px;
+  padding: 20px;
+  color: var(--primary-color);
 }
 
 .signupTitleText {
@@ -22,24 +27,11 @@
 
   display: flex;
   flex-direction: column;
-  align-items: start;
-}
-
-.signupInput {
-  width: 100%;
 }
 
 .signupInputTitleText {
   font-weight: 700;
   font-size: 15px;
-}
-
-.profileImage {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #c4c4c4;
-  align-self: center;
 }
 
 .signupButton {
@@ -50,7 +42,7 @@
   justify-content: center;
   align-items: center;
 
-  background-color: #aca0eb;
+  background-color: var(--primary-color-disabled);
   color: #ffffff;
   text-decoration: none;
 

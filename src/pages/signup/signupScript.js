@@ -6,6 +6,7 @@ import {
   validateConfirmPassword,
   validateNickname,
 } from "../../../utils/validation.js";
+import { getCSSVariable } from "../../../utils/getCSSVariable.js";
 
 export default function signupScript() {
   const signupEmailInput = document.getElementById("signupEmailInput");
@@ -33,16 +34,16 @@ export default function signupScript() {
 
   // 버튼 초기 상태를 disabled로 설정
   signupButton.disabled = true;
-  signupButton.style.backgroundColor = "#aca0eb";
+  signupButton.style.backgroundColor = getCSSVariable("--primary-color-disabled");
 
   // 모든 validation이 통과되었는지 확인하고 버튼 상태 업데이트
   function updateSignupButtonState() {
     if (isEmailValid && isPasswordValid && isPasswordConfirmValid && isNicknameValid) {
       signupButton.disabled = false;
-      signupButton.style.backgroundColor = "#7f6aee";
+      signupButton.style.backgroundColor = getCSSVariable("--primary-color");
     } else {
       signupButton.disabled = true;
-      signupButton.style.backgroundColor = "#aca0eb";
+      signupButton.style.backgroundColor = getCSSVariable("--primary-color-disabled");
     }
   }
 

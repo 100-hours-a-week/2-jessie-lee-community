@@ -3,11 +3,6 @@ export default function signupView() {
     <div class="signupWrapper">
       <h3 class="signupTitleText">회원가입</h3>
       <div class="signupInputContainer">
-        <p class="signupInputTitleText">프로필 사진</p>
-        <span class="helperText">* 프로필 사진을 추가해주세요</span>
-        <img class="profileImage" />
-      </div>
-      <div class="signupInputContainer">
         <p class="signupInputTitleText">이메일*</p>
         <input
           type="email"
