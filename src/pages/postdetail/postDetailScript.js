@@ -50,8 +50,8 @@ function displayPostDetail(/** @param {PostDetail} post */ post) {
               ${post.content}
           </div>
           <div class="post-detail-stats">
-              <button class="post-detail-button">${post.likeCount}</br>좋아요수</button>
-              <button class="post-detail-button">${post.commentCount}</br>댓글</button>
+              <button class="post-detail-button">좋아요 ${post.likeCount}</button>
+              <button class="post-detail-button">댓글 ${post.commentCount}</button>
           </div>
       </article>
   `;
