@@ -17,7 +17,7 @@ export default class NavBar extends Component {
     if (this.state.isLoggedIn) {
       return `
         <div class="navMenu">
-          <a href="/posts" class="navMenuItem">게시판</a>
+          <a href="/" class="navMenuItem">게시판</a>
           <a href="/mypage" class="navMenuItem">마이페이지</a>
           <a href="#" class="navMenuItem" id="logoutBtn">로그아웃</a>
         </div>
@@ -28,7 +28,7 @@ export default class NavBar extends Component {
     } else {
       return `
         <div class="navMenu">
-          <a href="/posts" class="navMenuItem">게시판</a>
+          <a href="/" class="navMenuItem">게시판</a>
           <a href="/login" class="navMenuItem">로그인</a>
           <a href="/signup" class="navMenuItem">회원가입</a>
         </div>

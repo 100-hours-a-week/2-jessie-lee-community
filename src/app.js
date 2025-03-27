@@ -36,23 +36,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 const routes = [
   {
     path: /^\/$/, // Home
-    view: () => `<section class="wrap">
-                   <a href="/login" data-link>로그인</a>
-                   <a href="/posts" data-link>게시판</a>
-                   <a href="/mypage" data-link>마이페이지</a>
-                 </section>`,
+    view: postsView,
+    script: postsScript,
+    css: "/src/pages/posts/posts.css",
   },
   {
     path: /^\/login\/?$/, // Login
     view: loginView,
     script: loginScript,
     css: "/src/pages/login/login.css",
-  },
-  {
-    path: /^\/posts\/?$/, // 게시글 목록 보기
-    view: postsView,
-    script: postsScript,
-    css: "/src/pages/posts/posts.css",
   },
   {
     path: /^\/post-detail\/(\d+)\/?$/, // 게시글 상세보기
