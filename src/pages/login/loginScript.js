@@ -1,4 +1,4 @@
-import { getLogin } from "../../../api/getLogin.js";
+import { postLogin } from "../../../api/postLogin.js";
 // import useState from "../../../js/useState.js";
 import { validateEmail, validatePassword } from "../../../utils/validation.js";
 import { updateUserLoginState } from "../../app.js";
@@ -46,5 +46,13 @@ export default function loginScript() {
     isPasswordValid = isValid;
     passwordHelper.textContent = message;
     updateLoginButtonState();
+  });
+
+  loginButton.addEventListener("click", async function (e) {
+    e.preventDefault();
+
+    if (!isEmailValid || !isPasswordValid) return;
+
+    await postLogin(emailInput.value, passwordInput.value);
   });
 }

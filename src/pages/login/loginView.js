@@ -15,7 +15,7 @@ export default function loginView() {
           <p class="helperText" id="passwordHelper"></p>
         </div>
         <!-- TODO: 로그인 기능 구현 -->
-        <a class="loginButton" id="loginButton" href="../posts/posts.html"> 로그인 </a>
+        <button class="loginButton" id="loginButton"> 로그인 </button>
       </form>
       <a href="/signup" class="signupButton">회원가입</a>
     </div>
