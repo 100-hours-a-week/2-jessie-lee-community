@@ -51,12 +51,6 @@
   font-weight: 400;
 }
 
-.divider {
-  width: 100%;
-  height: 1px;
-  background-color: #cecece;
-}
-
 .post-detail-button {
   width: 140px;
   height: 80px;

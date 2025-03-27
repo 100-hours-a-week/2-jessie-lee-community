@@ -45,7 +45,7 @@ function displayPostDetail(/** @param {PostDetail} post */ post) {
               <button class="delete btn">삭제</button>
             </div>
           </div>
-          <div class="divider"></div>
+          <div class="horizontal-divider"></div>
           <div class="post-detail-content">
               ${post.content}
           </div>
