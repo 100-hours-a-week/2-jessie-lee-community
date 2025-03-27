@@ -110,5 +110,9 @@ export default function signupScript() {
 
   signupButton.addEventListener("click", async function () {
     const res = await postUser(userEmail, userPassword, userNickname);
+    if (res) {
+      alert("회원가입이 완료되었습니다.");
+      location.href = "/login";
+    }
   });
 }
