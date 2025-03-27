@@ -1,0 +1,11 @@
+:root {
+  /* 색상 */
+  --primary-color: #07553b;
+  --secondary-color: #ced46a;
+  --background-color: #f6f6e6;
+  --text-color: #000000;
+  --text-color-light: #ffffff;
+  --border-color: #e0e0e0;
+  --placeholder-color: #c4c4c4;
+  --error-color: #ff0000;
+}
