@@ -31,7 +31,6 @@ function createPostElement(/** @param {Post} post */ post) {
           <div class="post-info">
               <span>좋아요 ${post.likeCount}</span>
               <span>댓글 ${post.commentCount}</span>
-              <span>조회수 ${post.viewCount}</span>
               <span class="date">업로드 ${formatDate(post.createdAt)}</span>
           </div>
           <div class="horizontal-divider"></div>

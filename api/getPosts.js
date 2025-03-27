@@ -6,7 +6,6 @@ import { BASE_URL } from "../config.js";
  * @property {string} title - 게시글 제목
  * @property {string} createdAt - 생성 일시
  * @property {number} likeCount - 좋아요 수
- * @property {number} viewCount - 조회 수
  * @property {number} commentCount - 댓글 수
  * @property {string} userNickname - 작성자 이름
  */

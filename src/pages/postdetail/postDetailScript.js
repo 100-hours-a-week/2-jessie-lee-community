@@ -51,7 +51,6 @@ function displayPostDetail(/** @param {PostDetail} post */ post) {
           </div>
           <div class="post-detail-stats">
               <button class="post-detail-button">${post.likeCount}</br>좋아요수</button>
-              <button class="post-detail-button">${post.viewCount}</br>조회수</button>
               <button class="post-detail-button">${post.commentCount}</br>댓글</button>
           </div>
       </article>
