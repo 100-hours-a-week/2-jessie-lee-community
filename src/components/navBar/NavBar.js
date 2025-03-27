@@ -6,7 +6,6 @@ export default class NavBar extends Component {
 
     // 상태 초기화
     this.state = {
-      isLoggedIn: localStorage.getItem("isLoggedIn") === "true",
       userId: JSON.parse(localStorage.getItem("userId")) || null,
       ...this.state,
     };
@@ -57,7 +56,6 @@ export default class NavBar extends Component {
     e.preventDefault();
 
     // 로컬 스토리지에서 사용자 정보 제거
-    localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userId");
 
     // 컴포넌트 상태 업데이트

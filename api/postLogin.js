@@ -14,7 +14,6 @@ export async function postLogin(email, password) {
       throw new Error(errorData.message || "로그인에 실패했습니다.");
     }
 
-    window.location.href = "/posts";
     const data = await response.json();
     return data;
   } catch (error) {

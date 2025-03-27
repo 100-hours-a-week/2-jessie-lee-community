@@ -53,6 +53,10 @@ export default function loginScript() {
 
     if (!isEmailValid || !isPasswordValid) return;
 
-    await postLogin(emailInput.value, passwordInput.value);
+    const res = await postLogin(emailInput.value, passwordInput.value);
+    if (res) {
+      localStorage.setItem("userId", res);
+      window.location.href = "/";
+    }
   });
 }
