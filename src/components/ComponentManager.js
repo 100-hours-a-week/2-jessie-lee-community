@@ -1,50 +1,49 @@
 export default class ComponentManager {
   constructor() {
     this.components = new Map();
-    this.eventBus = new EventBus();
   }
 
-  // 컴포넌트 등록
+  /**
+   * 컴포넌트 등록
+   * @param {string} id - 컴포넌트 식별자
+   * @param {Object} component - 컴포넌트 인스턴스
+   * @returns {Object} - 등록된 컴포넌트 인스턴스
+   */
   register(id, component) {
     this.components.set(id, component);
     return component;
   }
 
-  // 컴포넌트 가져오기
+  /**
+   * 컴포넌트 가져오기
+   * @param {string} id - 컴포넌트 식별자
+   * @returns {Object|undefined} - 컴포넌트 인스턴스 또는 undefined
+   */
   get(id) {
     return this.components.get(id);
   }
 
-  // 전역 상태 변경 시 모든 관련 컴포넌트 업데이트
-  updateState(stateChanges) {
-    this.eventBus.emit("stateChange", stateChanges);
-  }
-}
-
-// 간단한 이벤트 버스 구현
-class EventBus {
-  constructor() {
-    this.events = {};
+  /**
+   * 컴포넌트 제거
+   * @param {string} id - 컴포넌트 식별자
+   * @returns {boolean} - 제거 성공 여부
+   */
+  unregister(id) {
+    return this.components.delete(id);
   }
 
-  // 이벤트 구독
-  on(event, callback) {
-    if (!this.events[event]) {
-      this.events[event] = [];
+  /**
+   * 특정 컴포넌트 상태 업데이트
+   * @param {string} id - 컴포넌트 식별자
+   * @param {Object} newState - 새로운 상태 객체
+   * @returns {boolean} - 업데이트 성공 여부
+   */
+  updateComponentState(id, newState) {
+    const component = this.get(id);
+    if (component && typeof component.setState === "function") {
+      component.setState(newState);
+      return true;
     }
-    this.events[event].push(callback);
-    return () => this.off(event, callback);
-  }
-
-  // 이벤트 구독 취소
-  off(event, callback) {
-    if (!this.events[event]) return;
-    this.events[event] = this.events[event].filter((cb) => cb !== callback);
-  }
-
-  // 이벤트 발행
-  emit(event, data) {
-    if (!this.events[event]) return;
-    this.events[event].forEach((callback) => callback(data));
+    return false;
   }
 }

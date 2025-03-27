@@ -33,23 +33,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   componentManager.register(COMPONENT_IDS.NAVBAR, navbar);
 });
 
-// 사용자 로그인 상태 변경 시 NavBar 업데이트하는 함수
-// export function updateUserLoginState(isLoggedIn, user = null) {
-//   // 로컬 스토리지 업데이트
-//   localStorage.setItem("isLoggedIn", isLoggedIn);
-//   if (user) {
-//     localStorage.setItem("user", JSON.stringify(user));
-//   } else {
-//     localStorage.removeItem("user");
-//   }
-
-//   // NavBar 컴포넌트 업데이트
-//   const navbar = componentManager.get("navbar");
-//   if (navbar) {
-//     navbar.setState({ isLoggedIn, user });
-//   }
-// }
-
 const routes = [
   {
     path: /^\/$/, // Home

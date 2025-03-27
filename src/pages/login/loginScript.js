@@ -1,7 +1,6 @@
 import { postLogin } from "../../../api/postLogin.js";
 // import useState from "../../../js/useState.js";
 import { validateEmail, validatePassword } from "../../../utils/validation.js";
-import { updateUserLoginState } from "../../app.js";
 
 export default function loginScript() {
   const emailInput = document.getElementById("emailInput");
