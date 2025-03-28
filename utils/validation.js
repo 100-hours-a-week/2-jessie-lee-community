@@ -1,6 +1,6 @@
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 export function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   if (email.length <= 0) return { isValid: false, message: "*이메일을 입력해주세요." };
 
   if (!emailRegex.test(email)) {
