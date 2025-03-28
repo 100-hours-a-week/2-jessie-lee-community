@@ -9,7 +9,13 @@ import { getPosts } from "../../../api/getPosts.js";
 export default function postsScript() {
   const newPostButton = document.getElementById("new-post-button");
   newPostButton.addEventListener("click", () => {
-    location.href = "/createPost";
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      alert("로그인 후 이용해주세요.");
+      location.href = "/login";
+    } else {
+      location.href = "/createPost";
+    }
   });
   displayPosts();
 }
