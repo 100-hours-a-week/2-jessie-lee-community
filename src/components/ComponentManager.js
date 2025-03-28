@@ -40,10 +40,10 @@ export default class ComponentManager {
    */
   updateComponentState(id, newState) {
     const component = this.get(id);
-    if (component && typeof component.setState === "function") {
-      component.setState(newState);
-      return true;
+    if (!component) return;
+
+    if (typeof component.update === "function") {
+      component.update(newState);
     }
-    return false;
   }
 }

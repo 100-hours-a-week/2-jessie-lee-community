@@ -1,19 +1,36 @@
-import Component from "../Component.js";
+import { useState } from "../../core/useState.js";
 
-export default class NavBar extends Component {
-  constructor(container, props = {}) {
-    super(container, props);
+/** NavBar 컴포넌트 */
+export default function NavBar(container, props = {}) {
+  // 상태 관리 - createSignal을 사용하여 state와 setState 생성
+  const [state, setState] = useState({
+    userId: JSON.parse(localStorage.getItem("userId")) || null,
+  });
 
-    // 상태 초기화
-    this.state = {
-      userId: JSON.parse(localStorage.getItem("userId")) || null,
-      ...this.state,
-    };
+  // 로그아웃 핸들러
+  function handleLogout(e) {
+    e.preventDefault();
+    localStorage.removeItem("userId");
+    setState({
+      userId: null,
+    });
+    // 로그아웃 후 홈페이지로 이동
+    window.location.href = "/";
+  }
+
+  // 이벤트 리스너 연결
+  function setupEventListeners() {
+    const logoutBtn = container.querySelector("#logoutBtn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", handleLogout);
+    }
   }
 
   // 로그인 상태에 따라 다른 메뉴 아이템을 반환
-  getMenuItems() {
-    if (this.state.isLoggedIn) {
+  function getMenuItems() {
+    const currentState = state();
+
+    if (currentState.isLoggedIn) {
       return `
         <div class="navMenu">
           <a href="/" class="navMenuItem">게시판</a>
@@ -21,7 +38,7 @@ export default class NavBar extends Component {
           <a href="#" class="navMenuItem" id="logoutBtn">로그아웃</a>
         </div>
         <div class="navUserInfo">
-          <span>안녕하세요, ${this.state.user?.nickname || "사용자"}님</span>
+          <span>안녕하세요, ${currentState.user?.nickname || "사용자"}님</span>
         </div>
       `;
     } else {
@@ -35,49 +52,34 @@ export default class NavBar extends Component {
     }
   }
 
-  // 이벤트 리스너 연결 메서드 오버라이드
-  attachEventListeners() {
-    const logoutBtn = this.container.querySelector("#logoutBtn");
-    if (logoutBtn) {
-      logoutBtn.addEventListener("click", this.handleLogout.bind(this));
-    }
-  }
-
-  // 이벤트 리스너 제거 메서드 오버라이드
-  removeEventListeners() {
-    const logoutBtn = this.container.querySelector("#logoutBtn");
-    if (logoutBtn) {
-      logoutBtn.removeEventListener("click", this.handleLogout.bind(this));
-    }
-  }
-
-  // 로그아웃 처리 핸들러
-  handleLogout(e) {
-    e.preventDefault();
-
-    // 로컬 스토리지에서 사용자 정보 제거
-    localStorage.removeItem("userId");
-
-    // 컴포넌트 상태 업데이트
-    this.setState({
-      isLoggedIn: false,
-      userId: null,
-    });
-
-    // 로그아웃 후 홈페이지로 이동
-    window.location.href = "/";
-  }
-
-  // 컴포넌트 렌더링
-  render() {
-    this.container.innerHTML = `
+  // 렌더링 함수
+  function render() {
+    container.innerHTML = `
       <div class="navBarContainer">
         <div class="navLogo">
           <a href="/">Jessie's Community</a>
         </div>
-        ${this.getMenuItems()}
+        ${getMenuItems()}
       </div>
     `;
-    this.attachEventListeners();
+    setupEventListeners();
   }
+
+  // 컴포넌트 업데이트 함수 (외부에서 호출 가능)
+  function update(newState) {
+    setState({
+      ...state(),
+      ...newState,
+    });
+    render();
+  }
+
+  // 초기 렌더링
+  render();
+
+  // 컴포넌트 인터페이스 반환 (외부에서 접근 가능한 메서드)
+  return {
+    update,
+    getState: state,
+  };
 }

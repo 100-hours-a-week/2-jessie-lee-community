@@ -1,6 +1,5 @@
 import Router from "./core/router.js";
 import ComponentManager from "./components/ComponentManager.js";
-import { loadComponent } from "../utils/componentLoader.js";
 import loginView from "./pages/login/loginView.js";
 import loginScript from "./pages/login/loginScript.js";
 import postsScript from "./pages/posts/postsScript.js";
@@ -16,6 +15,7 @@ import { COMPONENT_IDS } from "./components/ComponentIds.js";
 import NavBar from "./components/navBar/NavBar.js";
 import createPostView from "./pages/posts/createPost/createPostView.js";
 import createPostScript from "./pages/posts/createPost/createPostScript.js";
+import loadCSS from "../utils/loadCSS.js";
 
 // 컴포넌트 매니저 초기화
 const componentManager = new ComponentManager();
@@ -26,13 +26,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const navbarContainer = document.getElementById("navbar-container");
   if (!navbarContainer) return;
 
-  const navbar = await loadComponent(
-    NavBar,
-    navbarContainer,
-    {},
-    "/src/components/navBar/navbar.css"
-  );
+  const navbar = NavBar(navbarContainer, {});
   componentManager.register(COMPONENT_IDS.NAVBAR, navbar);
+
+  await loadCSS("/src/components/navBar/navbar.css");
 });
 
 const routes = [

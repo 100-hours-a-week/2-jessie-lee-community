@@ -2,6 +2,7 @@ import { postLogin } from "../../../api/postLogin.js";
 // import useState from "../../../js/useState.js";
 import { validateEmail, validatePassword } from "../../../utils/validation.js";
 import { getCSSVariable } from "../../../utils/getCSSVariable.js";
+import { COMPONENT_IDS } from "../../components/ComponentIds.js";
 
 export default function loginScript() {
   const emailInput = document.getElementById("emailInput");
