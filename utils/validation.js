@@ -66,3 +66,15 @@ export function validateNickname(nickname) {
 
   return { isValid: true, message: "" };
 }
+
+export function validatePostTitle(title) {
+  if (title.trim().length <= 0) return { isValid: false, message: "*제목을 입력해주세요." };
+  else if (title.trim().length > 100)
+    return { isValid: false, message: "*제목은 100자 이내로 작성해주세요." };
+  return { isValid: true, message: "" };
+}
+
+export function validatePostContent(content) {
+  if (content.trim().length <= 0) return { isValid: false, message: "*내용을 입력해주세요." };
+  return { isValid: true, message: "" };
+}

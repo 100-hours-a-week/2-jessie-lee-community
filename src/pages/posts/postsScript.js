@@ -7,6 +7,10 @@ import { getPosts } from "../../../api/getPosts.js";
  */
 
 export default function postsScript() {
+  const newPostButton = document.getElementById("new-post-button");
+  newPostButton.addEventListener("click", () => {
+    location.href = "/createPost";
+  });
   displayPosts();
 }
 

@@ -14,6 +14,8 @@ import mypageScript from "./pages/mypage/mypageScript.js";
 import passwordEditView from "./pages/passwordEdit/passwordEditView.js";
 import { COMPONENT_IDS } from "./components/ComponentIds.js";
 import NavBar from "./components/navBar/NavBar.js";
+import createPostView from "./pages/posts/createPost/createPostView.js";
+import createPostScript from "./pages/posts/createPost/createPostScript.js";
 
 // 컴포넌트 매니저 초기화
 const componentManager = new ComponentManager();
@@ -51,6 +53,12 @@ const routes = [
     view: postDetailView,
     script: postDetailScript,
     css: "/src/pages/postdetail/post-detail.css",
+  },
+  {
+    path: /^\/createPost\/?$/, // 게시글 작성
+    view: createPostView,
+    script: createPostScript,
+    css: "/src/pages/posts/createPost/createPost.css",
   },
   {
     path: /^\/signup\/?$/, // 회원가입
