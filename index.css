@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 @import url("../../../common/variables.css");
 
 html,
@@ -12,6 +13,10 @@ body {
   background-color: var(--background-color);
 }
 
+button {
+  cursor: pointer;
+}
+
 input {
   height: 20px;
   margin-top: 10px;
@@ -22,6 +27,14 @@ input {
 }
 
 input:focus-visible {
+  outline: 1px solid var(--primary-color);
+}
+
+textarea {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+textarea:focus-visible {
   outline: 1px solid var(--primary-color);
 }
 
