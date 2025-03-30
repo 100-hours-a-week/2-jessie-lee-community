@@ -3,14 +3,20 @@
 ## 프로젝트 설명
 
 - 커뮤니티 서비스를 풀스택으로 구현한 개인 프로젝트입니다. ([BE Repo 보러 가기](https://github.com/100-hours-a-week/2-jessie-lee-community-be))
-- HTML, CSS, vanillaJS 만으로 제작했습니다.
+- HTML, CSS, vanilla JS 만으로 제작했습니다.
+
+### 기술 스택
+
+- HTML, CSS, vanilla JS
 
 ## 프로젝트의 핵심 목표
 
-- vanillaJS 만으로 SPA를 구현해보고, React의 기타 기능들을 구현해 보며 React의 동작 원리를 이해하고 모방해본다.
+- vanilla JS 만으로 SPA를 구현해보고, React의 기타 기능들을 구현해 보며 React의 동작 원리를 이해하고 모방해본다.
 - BE 구현을 직접 해보면서 웹 애플리케이션 개발의 전체적인 프로세스를 이해한다.
 
-## 서비스 화면
+## 서비스 화면 및 시연 영상
+
+> [시연 영상](https://youtu.be/wxcrG3GaOwU)
 
 회원가입 | 로그인 |
 ---|---|
